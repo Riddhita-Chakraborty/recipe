@@ -1,0 +1,219 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'sans-serif';
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-out; /* Added page fade-in */
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    color: #d41818;
+    font-size: 3rem;
+    margin-top: 30px;
+    opacity: 0;
+    animation: slideInTop 1s ease-out forwards; /* Added slide-in animation */
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Delay for smoother sequential animation */
+}
+h2 {
+    text-align:center;
+    color: #d41818;
+    font-size: 2rem;
+    margin-top: 30px;
+    opacity:initial;
+    animation: slideInTop 1s ease-out forwards; /* Added slide-in animation */
+}
+/* Features Section */
+ul {
+    list-style-type:none;
+    padding: 0;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+ul::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;  /* Adjust size of the watermark */
+    height: 600px; /* Adjust size of the watermark */
+    background-image: url('background\ image.jpg');
+    background-size: contain; /* Scale the image to fit */
+    background-repeat: no-repeat;
+    opacity: 0.1; /* Adjust opacity for watermark effect */
+    pointer-events: none; /* Ensures the watermark doesn't interfere with interactions */
+}
+ul li {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards; /* Added staggered fade-in-up animation */
+}
+
+/* Animation for each list item */
+ul li:nth-child(1) {
+    animation-delay: 1.3s; /* Delay for first list item */
+}
+
+ul li:nth-child(2) {
+    animation-delay: 1.5s; /* Delay for second list item */
+}
+
+ul li:nth-child(3) {
+    animation-delay: 1.7s; /* Delay for third list item */
+}
+
+ul li:nth-child(4) {
+    animation-delay: 1.9s; /* Delay for fourth list item */
+}
+
+/* Button and Search Form */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #9d4d2a;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 300px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: #d41818;
+    transform: scale(1.05); /* Slight scale up when input is focused */
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #d41818;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+    background-color: #cdac0b;
+    transform: translateY(-3px); /* Button lifts when hovered */
+}
+
+/* Link Styling */
+a {
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #b3d731;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid #85b717;
+    border-radius: 5px;
+    width: 200px;
+    margin: 20px auto;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    opacity: 0;
+    animation: fadeinUp 1.5s ease-out forwards;
+    animation-delay: 2s; /* Stagger the animation */
+}
+
+a:hover {
+    background-color: #cfdb21;
+    color: white;
+    transform: translateY(-3px); /* Link lifts when hovered */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    ul li {
+        font-size: 1rem;
+    }
+
+    form input {
+        width: 250px;
+    }
+
+    form button {
+        font-size: 0.9rem;
+    }
+
+    a {
+        width: 180px;
+    }
+}
+
+/* Animations */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-in from the top */
+@keyframes slideInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in with upward movement (for list items) */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
